@@ -1,0 +1,170 @@
+/* base */
+html,
+body {
+  height: 100%;
+}
+p {
+  text-align: left;
+}
+
+body {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #f5f5f5;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.container {
+  text-align: center;
+  padding-top: 375px;
+}
+.container-index {
+  text-align: center;
+  padding-top: 150px;
+}
+
+.text-responsive {
+  font-size: calc(42px + (60 - 42) * (100vw - 768px) / (1440 - 768));
+}
+
+
+/* 404 & 500*/
+.wrap {
+  margin: 0 auto;
+  width: 350px;
+}
+
+.f-o-header {
+  font-size: 5rem;
+  position: relative;
+}
+
+.f-o-header:before {
+  content: attr(data-text);
+  position: absolute;
+  left: -2px;
+  text-shadow: 1px 0 blue;
+  top: 0;
+  color: black;
+  background: white;
+  overflow: hidden;
+  clip: rect(0, 900px, 0, 0);
+  -webkit-animation: noise-anim-2 3s infinite linear alternate-reverse;
+  animation: noise-anim-2 3s infinite linear alternate-reverse;
+}
+.f-o-header:after {
+  content: attr(data-text);
+  position: absolute;
+  left: 2px;
+  text-shadow: -1px 0 red;
+  top: 0;
+  color: black;
+  background: white;
+  overflow: hidden;
+  clip: rect(0, 900px, 0, 0);
+  -webkit-animation: noise-anim 2s infinite linear alternate-reverse;
+  animation: noise-anim 2s infinite linear alternate-reverse;
+}
+.f-o-copy {
+  font-size: 1.5rem;
+}
+.f-o-f-wrap {
+  margin: 0 6rem;
+}
+@-webkit-keyframes noise-anim {
+  0% {
+    clip: rect(13px, 9999px, 95px, 0);
+  }
+  5% {
+    clip: rect(39px, 9999px, 69px, 0);
+  }
+  10% {
+    clip: rect(51px, 9999px, 36px, 0);
+  }
+  15% {
+    clip: rect(64px, 9999px, 61px, 0);
+  }
+  20% {
+    clip: rect(59px, 9999px, 12px, 0);
+  }
+  25% {
+    clip: rect(11px, 9999px, 70px, 0);
+  }
+  30% {
+    clip: rect(70px, 9999px, 45px, 0);
+  }
+  35% {
+    clip: rect(49px, 9999px, 82px, 0);
+  }
+  40% {
+    clip: rect(33px, 9999px, 11px, 0);
+  }
+  45% {
+    clip: rect(73px, 9999px, 44px, 0);
+  }
+  50% {
+    clip: rect(71px, 9999px, 50px, 0);
+  }
+  55% {
+    clip: rect(29px, 9999px, 78px, 0);
+  }
+  60% {
+    clip: rect(74px, 9999px, 95px, 0);
+  }
+  65% {
+    clip: rect(36px, 9999px, 6px, 0);
+  }
+  70% {
+    clip: rect(87px, 9999px, 72px, 0);
+  }
+  75% {
+    clip: rect(17px, 9999px, 68px, 0);
+  }
+  80% {
+    clip: rect(80px, 9999px, 51px, 0);
+  }
+  85% {
+    clip: rect(42px, 9999px, 19px, 0);
+  }
+  90% {
+    clip: rect(70px, 9999px, 5px, 0);
+  }
+  95% {
+    clip: rect(43px, 9999px, 30px, 0);
+  }
+  100% {
+    clip: rect(58px, 9999px, 33px, 0);
+  }
+}
