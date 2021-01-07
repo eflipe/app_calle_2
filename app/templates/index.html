@@ -4,10 +4,10 @@
 
 
 {% block content %}
-<h1>Hello, {{ city_str }}!</h1>
-{# <div class="container-index"></div>
+
+<div class="container-index"></div>
   <form class="form-signin text-center" method="post">
-    <h1 class="h3 mb-3 font-weight-normal">{{city_str}}</h1>
+    {# <h1 class="h3 mb-3 font-weight-normal">{{city_str}}</h1>
     <label for="lat_url_1" class="sr-only">Latitud</label>
     <input type="hidden" class="form-control" id="lat_url_1" name="lat_url_1" value=""
     aria-describedby="latitud"  placeholder="Latitud...">
@@ -16,13 +16,12 @@
     <input type="hidden" class="form-control" id="long_url_2" name="long_url_2" value=""
     aria-describedby="longitud"  placeholder="Longitud...">
     <button type="submit" class="btn btn-light mt-3" name="button">Geolocalizar</button>
-    <br>
-    <a href="{{ url_for('item_calle.busqueda_calle') }}" class="text-decoration-none text-muted" target="_parent">
-      <button type="button" class="btn btn-light mt-3" name="button" value="{{ url_for('item_calle.busqueda_calle') }}">Buscar por nombre</button>
+    <br> #}
+  <a href="{{ url_for('search') }}" class="text-decoration-none text-muted" target="_parent">
+      <button type="button" class="btn btn-light mt-3" name="button" value="{{ url_for('search') }}">Buscar por nombre</button>
     </a>
-    <p class="mt-5 mb-3 text-muted" style="text-align: center">&copy; La sheca 2020</p>
-
-  </form> #}
+    <p class="mt-5 mb-3 text-muted" style="text-align: center">&copy; App calles 2020-2021</p>
+  </form>
 
 {% endblock content %}
 {% block map %}

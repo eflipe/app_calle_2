@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+<title>{% block title %} {{city_str}} {% endblock%}</title>
+
+
+{% block content %}
+  {% from "_macro.html" import render_form %}
+
+<div class="container-index"></div>
+  <form class="form-signin text-center" method="post" novalidate>
+    {{ form.hidden_tag() }}
+    <h1 class="h3 mb-3 font-weight-normal">Nueva búsqueda</h1>
+    <small class="form-text text-muted mb-2">Nombre de la calle: </small>
+    <label for="busqueda_calle" class="sr-only">Calle</label>
+    {{ render_form(form.search_item, class="form-control", **{ 'type':"text", 'id':"busqueda_calle", 'value':"", 'aria-describedby':"busqueda_calle",  'placeholder':"Calle..."})}}
+    <button type="submit" class="btn btn-light mt-3" name="button">Buscar</button>
+
+  </form>
+
+{% endblock content %}
