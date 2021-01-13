@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}
+
+{% endblock%}
+{% block content %}
+
+<div class="container">
+<div>
+<h1>{{ geo_street }}</h1>
+<br>
+{# {% if "Si el artículo" in print_calle %}
+<p>No encontrado.</p>
+<a href="{{wiki_calle}}" class="text-decoration-none text-muted">
+  <h4>Buscar en Wikipedia</h4>
+  <br>
+</a> #}
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+
+    <small class="form-text text-info mb-3 mt-3">{{ messages[0] }}</small>
+
+  {% endif %}
+{% endwith %}
+
+{# {% elif print_calle %}
+  <p>{{print_calle}}</p>
+  <br>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+
+      <small class="form-text text-info mb-3 mt-3">{{ messages[0] }}</small>
+
+    {% endif %}
+  {% endwith %}
+  <a href="{{wiki_calle}}" class="text-decoration-none text-muted">
+    <h4>Seguir leyendo (Wiki)</h4>
+    <br>
+  </a>
+{% endif %} #}
+
+<a href="{{ url_for('search') }}" class="text-decoration-none text-muted">
+  <h4>Buscar otra calle</h4>
+  <br>
+</a>
+
+
+</div>
+{% endblock content %}
