@@ -1,7 +1,6 @@
 {% extends "base.html" %}
-{% block title %}
+<title>{% block title %} {{geo_street}} {% endblock%}</title>
 
-{% endblock%}
 {% block content %}
 
 <div class="container">
@@ -14,13 +13,13 @@
   <h4>Buscar en Wikipedia</h4>
   <br>
 </a> #}
-{% with messages = get_flashed_messages() %}
+{# {% with messages = get_flashed_messages() %}
   {% if messages %}
 
-    <small class="form-text text-info mb-3 mt-3">{{ messages[0] }}</small>
+    <small class="form-text text-info mb-3 mt-3">{{ messages }}</small>
 
   {% endif %}
-{% endwith %}
+{% endwith %} #}
 
 {# {% elif print_calle %}
   <p>{{print_calle}}</p>

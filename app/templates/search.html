@@ -6,7 +6,7 @@
 {% block content %}
   {% from "_macro.html" import render_form %}
 
-<div class="container-index"></div>
+
   <form class="form-signin text-center" method="post" novalidate>
     {{ form.hidden_tag() }}
     <h1 class="h3 mb-3 font-weight-normal">Nueva búsqueda</h1>
@@ -16,5 +16,13 @@
     <button type="submit" class="btn btn-light mt-3" name="button">Buscar</button>
 
   </form>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+
+      <small class="form-text text-info mb-3 mt-3">{{ messages }}</small>
+
+    {% endif %}
+  {% endwith %}
+
 
 {% endblock content %}
