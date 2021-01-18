@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+<title>{% block title %} {{title}} {% endblock%}</title>
+
+
+{% block content %}
+
+
+<div class="container-index">
+  {% for street in cities_list %}
+    {% if  street.street_geo %}
+      <h1 class="h3 mb-3 font-weight-normal">{{ street.street_geo }}</h1>
+    {% else %}
+      <h1 class="h3 mb-3 font-weight-normal">{{ street.street_search }}</h1>
+    {% endif %}
+{% endfor %}
+  {% if prev_url %}
+    <a href="{{ prev_url }}"><<<</a>
+  {% endif %}
+  {% if next_url %}
+    <a href="{{ next_url }}">>>></a>
+  {% endif %}
+</div>
+
+{% endblock content %}

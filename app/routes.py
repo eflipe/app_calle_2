@@ -1,23 +1,12 @@
-from flask import render_template, flash, redirect, url_for
+from flask import render_template, flash, redirect, url_for, request
 from flask import copy_current_request_context
 from app import app
 from app.forms import SearchForm
+from app.email import send_mail
 from app import db
-from app import mail
-from flask_mail import Message
+# from flask_mail import Message
 from app.models import AppData
 import threading
-
-
-def send_mail(street_search, timestamp):
-    msg = Message(f'Se busco la calle: {street_search}',
-                  sender='heyheymycode@gmail.com',
-                  recipients=['heyheymycode@gmail.com'])
-    msg.html = render_template('email.html',
-                            street_search=street_search,
-                            timestamp=timestamp)
-
-    mail.send(msg)
 
 
 @app.route('/')
@@ -44,12 +33,24 @@ def search():
 
         sender = threading.Thread(name='mail_sender',
                                   target=send_msg,
-                                  args = (street_data.street_search, street_data.timestamp))
+                                  args=(street_data.street_search, street_data.timestamp))
 
         sender.start()
 
         return render_template("info_street.html",
                                 geo_street=search_street,
-                                )
+                              )
 
     return render_template("search.html", title="Search", form=form)
+
+
+@app.route('/list')
+def list():
+    page = request.args.get('page', 1, type=int)
+    cities_list = AppData.query.order_by(AppData.timestamp.desc()).paginate(
+        page, app.config['ITEMS_PER_PAGE'], False)
+    next_url = url_for('list', page=cities_list.next_num) \
+        if cities_list.has_next else None
+    prev_url = url_for('list', page=cities_list.prev_num) \
+        if cities_list.has_prev else None
+    return render_template('list.html', title='Lista', cities_list=cities_list.items, next_url=next_url, prev_url=prev_url)

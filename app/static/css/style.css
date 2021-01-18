@@ -52,7 +52,10 @@ body {
 }
 .container-index {
   text-align: center;
-  padding-top: 150px;
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
 }
 
 .text-responsive {
