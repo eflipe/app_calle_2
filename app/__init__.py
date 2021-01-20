@@ -15,6 +15,7 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 mail = Mail(app)
 
+
 if not app.debug:
     if app.config['MAIL_SERVER']:
         auth = None

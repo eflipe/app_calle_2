@@ -1,0 +1,95 @@
+2021-01-14 19:24:33,700 INFO: Microblog startup [in C:\Users\Felipe\Desktop\Felipe\Python\Django\workspace\17 - app_calles\app_calles\app\__init__.py:42]
+2021-01-14 19:59:51,711 INFO: Microblog startup [in C:\Users\Felipe\Desktop\Felipe\Python\Django\workspace\17 - app_calles\app_calles\app\__init__.py:44]
+2021-01-14 20:01:57,141 INFO: App calles startup [in C:\Users\Felipe\Desktop\Felipe\Python\Django\workspace\17 - app_calles\app_calles\app\__init__.py:44]
+2021-01-14 20:02:41,558 ERROR: Exception on /search [POST] [in c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Felipe\Desktop\Felipe\Python\Django\workspace\17 - app_calles\app_calles\app\routes.py", line 30, in search
+    mail.send(msg)
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\flask_mail.py", line 492, in send
+    message.send(connection)
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\flask_mail.py", line 427, in send
+    connection.send(self)
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\flask_mail.py", line 175, in send
+    assert message.send_to, "No recipients have been added"
+AssertionError: No recipients have been added
+2021-01-14 20:05:13,748 INFO: App calles startup [in C:\Users\Felipe\Desktop\Felipe\Python\Django\workspace\17 - app_calles\app_calles\app\__init__.py:44]
+2021-01-14 20:05:35,086 ERROR: Exception on /search [POST] [in c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Felipe\Desktop\Felipe\Python\Django\workspace\17 - app_calles\app_calles\app\routes.py", line 31, in search
+    mail.send(msg)
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\flask_mail.py", line 492, in send
+    message.send(connection)
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\flask_mail.py", line 427, in send
+    connection.send(self)
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\flask_mail.py", line 181, in send
+    if message.has_bad_headers():
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\flask_mail.py", line 400, in has_bad_headers
+    headers = [self.sender, self.reply_to] + self.recipients
+TypeError: can only concatenate list (not "str") to list
+2021-01-14 20:07:10,384 INFO: App calles startup [in C:\Users\Felipe\Desktop\Felipe\Python\Django\workspace\17 - app_calles\app_calles\app\__init__.py:44]
+2021-01-14 20:11:27,475 INFO: App calles startup [in C:\Users\Felipe\Desktop\Felipe\Python\Django\workspace\17 - app_calles\app_calles\app\__init__.py:44]
+2021-01-14 20:18:27,851 INFO: App calles startup [in C:\Users\Felipe\Desktop\Felipe\Python\Django\workspace\17 - app_calles\app_calles\app\__init__.py:44]
+2021-01-14 20:44:09,802 INFO: App calles startup [in C:\Users\Felipe\Desktop\Felipe\Python\Django\workspace\17 - app_calles\app_calles\app\__init__.py:44]
+2021-01-14 20:45:17,103 INFO: App calles startup [in C:\Users\Felipe\Desktop\Felipe\Python\Django\workspace\17 - app_calles\app_calles\app\__init__.py:44]
+2021-01-14 20:45:38,703 ERROR: Exception on /search [POST] [in c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Felipe\Desktop\Felipe\Python\Django\workspace\17 - app_calles\app_calles\app\routes.py", line 40, in search
+    @copy_current_request_context
+NameError: name 'copy_current_request_context' is not defined
+2021-01-14 20:46:51,340 INFO: App calles startup [in C:\Users\Felipe\Desktop\Felipe\Python\Django\workspace\17 - app_calles\app_calles\app\__init__.py:44]
+2021-01-14 20:48:00,870 INFO: App calles startup [in C:\Users\Felipe\Desktop\Felipe\Python\Django\workspace\17 - app_calles\app_calles\app\__init__.py:44]
+2021-01-17 13:58:30,383 INFO: App calles startup [in C:\Users\Felipe\Desktop\Felipe\Python\Django\workspace\17 - app_calles\app_calles\app\__init__.py:44]
+2021-01-17 14:03:33,821 INFO: App calles startup [in C:\Users\Felipe\Desktop\Felipe\Python\Django\workspace\17 - app_calles\app_calles\app\__init__.py:44]
+2021-01-17 14:31:30,125 INFO: App calles startup [in C:\Users\Felipe\Desktop\Felipe\Python\Django\workspace\17 - app_calles\app_calles\app\__init__.py:44]
+2021-01-17 14:44:38,663 INFO: App calles startup [in C:\Users\Felipe\Desktop\Felipe\Python\Django\workspace\17 - app_calles\app_calles\app\__init__.py:44]
+2021-01-18 13:44:18,618 INFO: App calles startup [in C:\Users\Felipe\Desktop\Felipe\Python\Django\workspace\17 - app_calles\app_calles\app\__init__.py:44]
+2021-01-18 14:01:15,032 INFO: App calles startup [in C:\Users\Felipe\Desktop\Felipe\Python\Django\workspace\17 - app_calles\app_calles\app\__init__.py:44]
+2021-01-18 14:02:17,739 INFO: App calles startup [in C:\Users\Felipe\Desktop\Felipe\Python\Django\workspace\17 - app_calles\app_calles\app\__init__.py:44]
+2021-01-18 14:04:13,479 INFO: App calles startup [in C:\Users\Felipe\Desktop\Felipe\Python\Django\workspace\17 - app_calles\app_calles\app\__init__.py:44]
+2021-01-18 14:05:05,190 INFO: App calles startup [in C:\Users\Felipe\Desktop\Felipe\Python\Django\workspace\17 - app_calles\app_calles\app\__init__.py:44]
+2021-01-18 14:05:23,606 INFO: App calles startup [in C:\Users\Felipe\Desktop\Felipe\Python\Django\workspace\17 - app_calles\app_calles\app\__init__.py:44]
+2021-01-18 14:09:05,877 INFO: App calles startup [in C:\Users\Felipe\Desktop\Felipe\Python\Django\workspace\17 - app_calles\app_calles\app\__init__.py:44]
+2021-01-18 14:10:46,460 INFO: App calles startup [in C:\Users\Felipe\Desktop\Felipe\Python\Django\workspace\17 - app_calles\app_calles\app\__init__.py:44]
+2021-01-18 14:11:51,611 INFO: App calles startup [in C:\Users\Felipe\Desktop\Felipe\Python\Django\workspace\17 - app_calles\app_calles\app\__init__.py:44]
+2021-01-18 14:12:37,348 INFO: App calles startup [in C:\Users\Felipe\Desktop\Felipe\Python\Django\workspace\17 - app_calles\app_calles\app\__init__.py:44]
+2021-01-18 14:14:42,846 INFO: App calles startup [in C:\Users\Felipe\Desktop\Felipe\Python\Django\workspace\17 - app_calles\app_calles\app\__init__.py:44]
+2021-01-18 14:15:15,976 INFO: App calles startup [in C:\Users\Felipe\Desktop\Felipe\Python\Django\workspace\17 - app_calles\app_calles\app\__init__.py:44]
+2021-01-18 14:15:52,749 INFO: App calles startup [in C:\Users\Felipe\Desktop\Felipe\Python\Django\workspace\17 - app_calles\app_calles\app\__init__.py:44]
+2021-01-18 14:17:28,770 INFO: App calles startup [in C:\Users\Felipe\Desktop\Felipe\Python\Django\workspace\17 - app_calles\app_calles\app\__init__.py:44]
+2021-01-18 15:10:10,951 INFO: App calles startup [in C:\Users\Felipe\Desktop\Felipe\Python\Django\workspace\17 - app_calles\app_calles\app\__init__.py:46]

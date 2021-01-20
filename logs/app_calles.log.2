@@ -1,0 +1,80 @@
+2021-01-18 15:11:10,559 ERROR: Exception on /list [GET] [in c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Felipe\Desktop\Felipe\Python\Django\workspace\17 - app_calles\app_calles\app\routes.py", line 56, in list
+    return render_template('list.html', title='Lista', cities_list=cities_list.items, next_url=next_url, prev_url=prev_url)
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\flask\templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\jinja2\environment.py", line 930, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\jinja2\environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\jinja2\environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\jinja2\loaders.py", line 127, in load
+    code = environment.compile(source, name, filename)
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\jinja2\environment.py", line 638, in compile
+    self.handle_exception(source=source_hint)
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Felipe\Desktop\Felipe\Python\Django\workspace\17 - app_calles\app_calles\app\templates\list.html", line 33, in template
+    {% endblock content %}
+jinja2.exceptions.TemplateSyntaxError: expected token 'end of statement block', got 'content'
+2021-01-18 15:11:50,797 ERROR: Exception on / [GET] [in c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Felipe\Desktop\Felipe\Python\Django\workspace\17 - app_calles\app_calles\app\routes.py", line 16, in index
+    return render_template('index.html', title='Index', city_str=city_str)
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\flask\templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\jinja2\environment.py", line 930, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\jinja2\environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\jinja2\environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\jinja2\loaders.py", line 127, in load
+    code = environment.compile(source, name, filename)
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\jinja2\environment.py", line 638, in compile
+    self.handle_exception(source=source_hint)
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\users\felipe\.virtualenvs\17_-_app_calles-c1v3uhxx\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Felipe\Desktop\Felipe\Python\Django\workspace\17 - app_calles\app_calles\app\templates\index.html", line 26, in template
+    {% endblock content %}
+jinja2.exceptions.TemplateSyntaxError: expected token 'end of statement block', got 'content'
+2021-01-18 15:14:08,496 INFO: App calles startup [in C:\Users\Felipe\Desktop\Felipe\Python\Django\workspace\17 - app_calles\app_calles\app\__init__.py:46]
+2021-01-18 15:19:17,803 INFO: App calles startup [in C:\Users\Felipe\Desktop\Felipe\Python\Django\workspace\17 - app_calles\app_calles\app\__init__.py:46]
+2021-01-18 15:24:03,141 INFO: App calles startup [in C:\Users\Felipe\Desktop\Felipe\Python\Django\workspace\17 - app_calles\app_calles\app\__init__.py:46]
+2021-01-18 15:27:54,213 INFO: App calles startup [in C:\Users\Felipe\Desktop\Felipe\Python\Django\workspace\17 - app_calles\app_calles\app\__init__.py:46]
+2021-01-18 15:30:34,786 INFO: App calles startup [in C:\Users\Felipe\Desktop\Felipe\Python\Django\workspace\17 - app_calles\app_calles\app\__init__.py:46]
+2021-01-19 12:39:40,645 INFO: App calles startup [in C:\Users\Felipe\Desktop\Felipe\Python\Django\workspace\17 - app_calles\app_calles\app\__init__.py:46]
+2021-01-19 12:40:20,177 INFO: App calles startup [in C:\Users\Felipe\Desktop\Felipe\Python\Django\workspace\17 - app_calles\app_calles\app\__init__.py:46]
+2021-01-19 16:35:27,070 INFO: App calles startup [in C:\Users\Felipe\Desktop\Felipe\Python\Django\workspace\17 - app_calles\app_calles\app\__init__.py:46]
+2021-01-19 17:12:23,908 INFO: App calles startup [in C:\Users\Felipe\Desktop\Felipe\Python\Django\workspace\17 - app_calles\app_calles\app\__init__.py:46]
+2021-01-19 17:14:52,753 INFO: App calles startup [in C:\Users\Felipe\Desktop\Felipe\Python\Django\workspace\17 - app_calles\app_calles\app\__init__.py:46]

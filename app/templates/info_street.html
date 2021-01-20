@@ -1,47 +1,93 @@
 {% extends "base.html" %}
 <title>{% block title %} {{geo_street}} {% endblock%}</title>
 
-{% block content %}
+{% block app_content %}
 
 <div class="container">
 <div>
 <h1>{{ geo_street }}</h1>
 <br>
-{# {% if "Si el artículo" in print_calle %}
-<p>No encontrado.</p>
-<a href="{{wiki_calle}}" class="text-decoration-none text-muted">
+{% if not info_street %}
+<p>No encontrado en nuestra base de datos. Usar Wikipedia.</p>
+<a href="{{wiki_link}}" class="text-decoration-none text-muted">
   <h4>Buscar en Wikipedia</h4>
   <br>
-</a> #}
-{# {% with messages = get_flashed_messages() %}
-  {% if messages %}
+</a>
 
-    <small class="form-text text-info mb-3 mt-3">{{ messages }}</small>
-
-  {% endif %}
-{% endwith %} #}
-
-{# {% elif print_calle %}
-  <p>{{print_calle}}</p>
+{% elif info_street %}
+  <p>{{info_street}}</p>
   <br>
-  {% with messages = get_flashed_messages() %}
-    {% if messages %}
-
-      <small class="form-text text-info mb-3 mt-3">{{ messages[0] }}</small>
-
-    {% endif %}
-  {% endwith %}
-  <a href="{{wiki_calle}}" class="text-decoration-none text-muted">
+  <small class="form-text text-info mb-2">{{ msg_wiki }}</small>
+  <a href="{{wiki_link}}" class="text-decoration-none text-muted">
     <h4>Seguir leyendo (Wiki)</h4>
     <br>
   </a>
-{% endif %} #}
+{% endif %}
 
 <a href="{{ url_for('search') }}" class="text-decoration-none text-muted">
   <h4>Buscar otra calle</h4>
   <br>
 </a>
-
-
+<div>
+  <div style="height: 50vh" id="mapContainer">
+  </div>
 </div>
-{% endblock content %}
+</div>
+{% endblock app_content %}
+{% block js%}
+<section>
+  <script>
+
+
+      // Initialize the platform object:
+          var platform = new H.service.Platform({
+            'apikey': '{{api_key}}'
+          });
+
+         const lat = {{lat_str}};
+     	   const lon = {{long_str}};
+         // const lat = {{lat_str}};
+    	   // const lon = {{long_str}};
+
+    	// Obtain the default map types from the platform object
+          var maptypes = platform.createDefaultLayers();
+
+          // Initialize a map:
+          var map = new H.Map(
+            document.getElementById('mapContainer'),
+            maptypes.raster.terrain.map,
+            {
+              zoom: 15,
+              center: { lat: lat, lng: lon }
+            });
+
+    	// Enable the event system on the map instance:
+    	  var mapEvents = new H.mapevents.MapEvents(map);
+
+    	// Instantiate the default behavior, providing the mapEvents object:
+    	 var behavior = new H.mapevents.Behavior(mapEvents);
+
+    	//window.addEventListener('resize',()=> get.ViewProt().resize())
+    	var marker = new H.map.Marker({ lat: lat, lng: lon });
+
+    	// Add the marker to the map:
+    	map.addObject(marker);
+
+    	// Create the default UI:
+    	var ui = H.ui.UI.createDefault(map, maptypes);
+
+    	// Add event listener to the marker:
+    	marker.addEventListener('tap', function(evt) {
+
+    		// Create an info bubble object at a specific geographic location:
+    		var bubble = new H.ui.InfoBubble({ lng: lon, lat: lat }, {
+                    content: '<p> <h4>Dirección</h4>{{address}}</p>'
+                 });
+
+    		// Add info bubble to the UI:
+    		ui.addBubble(bubble);
+    	});
+
+  </script>
+</section>
+{% endblock js %}

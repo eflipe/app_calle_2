@@ -3,8 +3,8 @@
       function showPosition() {
           if(navigator.geolocation) {
               navigator.geolocation.getCurrentPosition(function(position) {
-                // console.log(position.coords.latitude)
-                // console.log(position.coords.longitude)
+                console.log(position.coords.latitude)
+                console.log(position.coords.longitude)
                 const lat_1 = position.coords.latitude;
            	    const lon_2 = position.coords.longitude;
                   document.getElementById("lat_url_1").value = position.coords.latitude;
