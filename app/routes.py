@@ -22,7 +22,15 @@ def index():
         print(calle_lat, calle_long)
         context = api_here(calle_lat, calle_long)
 
-        street_data = AppData(street_geo=context[3])
+        if context[0] == 400:
+            street_data = AppData(street_geo=context[1])
+            db.session.add(street_data)
+            db.session.commit()
+            return render_template("info_street.html", info_street=context[1])
+
+        if context[0] != 400:
+            street_data = AppData(street_geo=context[3])
+
         db.session.add(street_data)
         db.session.commit()
 

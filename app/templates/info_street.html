@@ -14,6 +14,15 @@
   <br>
 </a>
 
+{% elif "No se pudo" in info_street %}
+<p>{{info_street}}</p>
+<br>
+
+<a href="{{ url_for('index') }}" class="text-decoration-none text-muted">
+  <h4>Probar de nuevo</h4>
+  <br>
+</a>
+
 {% elif info_street %}
   <p>{{info_street}}</p>
   <br>
@@ -22,6 +31,8 @@
     <h4>Seguir leyendo (Wiki)</h4>
     <br>
   </a>
+
+
 {% endif %}
 
 <a href="{{ url_for('search') }}" class="text-decoration-none text-muted">

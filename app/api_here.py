@@ -16,17 +16,23 @@ def api_here(latitude, longitude):
     # sending get request and saving the response as response object
     r = requests.get(url=URL, params=PARAMS)
     data = r.json()
+    print(data)
+    if latitude:
+        latitude = data['items'][0]['position']['lat']
+        longitude = data['items'][0]['position']['lng']
+        address = data['items'][0]['address']['label']
+        street = data['items'][0]['address']['street']
+        city = data['items'][0]['address']['city']
+        # district = data['items'][0]['address']['district']
 
-    latitude = data['items'][0]['position']['lat']
-    longitude = data['items'][0]['position']['lng']
-    address = data['items'][0]['address']['label']
-    street = data['items'][0]['address']['street']
-    city = data['items'][0]['address']['city']
-    # district = data['items'][0]['address']['district']
+        # print(latitude)
+        # print(longitude)
+        print("ADDRESS API HERE", address)
+        print("STREET", street)
+        # print(district)
+        return [api_key, latitude, longitude, address, city, street]
+    else:
+        msg = "No se pudo geolocalizar su posición."
+        print(msg)
 
-    # print(latitude)
-    # print(longitude)
-    print("ADDRESS API HERE", address)
-    print("STREET", street)
-    # print(district)
-    return [api_key, latitude, longitude, address, city, street]
+        return [400, msg]
