@@ -6,7 +6,8 @@ file_txt = 'calles_text.txt'
 basedir = os.path.abspath(os.path.dirname(__file__))
 ruta = os.path.join(basedir, file_txt)
 
-nombres = 'Doctor Eleodoro Lobos'
+# PINO, VIRREY DEL
+nombres = 'doctor luis agote'#'Doctor Eleodoro Lobos'
 
 
 def sin_tilde(nombre_calle):
@@ -15,13 +16,12 @@ def sin_tilde(nombre_calle):
 
 def clean_txt(nombre_calle):
 
-    if "Doctor" in nombre_calle:
-        nombre_calle = nombre_calle.split()
-        nombre_calle = f'{nombre_calle[2]},  {nombre_calle[0]}  {nombre_calle[1]} '
-        return nombre_calle
+    nombre_calle = nombre_calle.lower()
+    if 'doctor' in nombre_calle:
+        long = len('doctor ')
+        return nombre_calle[long:]
 
     return nombre_calle
-
 
 def search_calle(nombre_calle=None):
     file_txt = ruta
@@ -59,5 +59,5 @@ def search_calle(nombre_calle=None):
     return calle_info
 
 
-#search_calle(nombres)
-# clean_txt(nombres)
+search_calle(nombres)
+print(clean_txt(nombres))
