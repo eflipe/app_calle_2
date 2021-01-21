@@ -56,8 +56,8 @@ def search_calle(nombre_calle=None):
         print("INFO CALLE", calle_info[0])
         return calle_info[0]
 
-    return calle_info
+    return [calle_info, nombre_calle_sin_tilde]
 
 
-search_calle(nombres)
-print(clean_txt(nombres))
+# search_calle(nombres)
+# print(clean_txt(nombres))

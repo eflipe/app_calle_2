@@ -38,10 +38,9 @@ def index():
         search_info = search_calle(search_street)
         msg_wiki = "*Info obtenida de la base de datos."
 
-        wiki_info = CalleClass(search_street.title())
-
-        if not search_info:
+        if not search_info[0]:
             print("No encontrado")
+            wiki_info = CalleClass(search_info[1].title())
             search_info = wiki_info.load_calle()
             msg_wiki = "*Datos obtenidos desde Wikipedia, pueden \
                        no coincidir con su búsqueda."
