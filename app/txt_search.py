@@ -15,9 +15,10 @@ def sin_tilde(nombre_calle):
 
 def clean_txt(nombre_calle):
 
-    if 'Doctor' in nombre_calle:
-        long = len('Doctor')
-        nombre_calle = nombre_calle[long:]
+    if "Doctor" in nombre_calle:
+        nombre_calle = nombre_calle.split()
+        nombre_calle = f'{nombre_calle[2]},  {nombre_calle[0]}  {nombre_calle[1]} '
+        return nombre_calle
 
     return nombre_calle
 
@@ -28,9 +29,9 @@ def search_calle(nombre_calle=None):
 
     print(nombre_calle)
     nombre_calle = (' ').join(nombre_calle.split('_'))
-    # nombre_calle = clean_txt(nombre_calle)
-    nombre_calle = f'{nombre_calle.upper().strip()}'
-    # print("SIN DOC", nombre_calle)
+    nombre_calle = clean_txt(nombre_calle)
+    nombre_calle = f'{nombre_calle.upper()}'
+    print("DOC BIEN", nombre_calle)
     nombre_calle_sin_tilde = sin_tilde(nombre_calle)
 
     pattern = re.compile(r"({0}.*\(calle\)|{1}.*\(calle\)|{0}.*\(avenida\)|{1}.*\(avenida\))".format(nombre_calle_sin_tilde, nombre_calle))
@@ -58,4 +59,5 @@ def search_calle(nombre_calle=None):
     return calle_info
 
 
-search_calle(nombres)
+#search_calle(nombres)
+# clean_txt(nombres)
